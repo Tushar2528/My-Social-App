@@ -1,0 +1,25 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: auto; }
+  body #container-head {
+    top: 0;
+    height: 10%;
+    width: 100%;
+    background-color: #0073ff;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4%; }
+    body #container-head div {
+      height: 100%;
+      padding: 1%;
+      font-family: sans-serif; }
+      body #container-head div a {
+        color: white;
+        text-decoration: none; }
+    body #container-head #div1 {
+      font-size: 2rem; }
+    body #container-head #div2 {
+      display: flex; }

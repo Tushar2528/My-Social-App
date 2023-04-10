@@ -1,0 +1,29 @@
+
+body{
+
+    #container-foot{
+        height: 8%;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        background-color: lightgray;
+        display: flex;
+        font-family: sans-serif;
+        font-size: 1rem;
+        padding: 1%;
+        gap: 2%;
+        position: sticky;
+        
+
+        div{
+            #links{
+                text-decoration: none;
+                color: white;
+        
+            }
+        }
+
+        
+    }
+
+}
