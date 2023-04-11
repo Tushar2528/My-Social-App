@@ -7,6 +7,8 @@ const port = 8000;
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
 
+var bodyParser = require('body-parser');
+
 // used for session cookie  
 const session = require('express-session');
 const passport = require('passport');
@@ -24,6 +26,12 @@ app.use(sassMiddleware({
     outputStyle : 'extended',
     prefix : '/css'
 }));
+
+
+
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 
 

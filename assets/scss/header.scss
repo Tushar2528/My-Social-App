@@ -1,45 +1,81 @@
-body{
-    height: 100vh;
-    width: 100vw;
-   position: relative;
-   overflow: auto;
+// body{
+//     height: 100vh;
+//     width: 100vw;
+//    position: relative;
+//    overflow: auto;
     
 
-    #container-head{
+//     #container-head{
         
-        top: 0;
-        height: 10%;
-        width: 100%;
-        background-color: rgb(0, 115, 255);
-        color: white;
+//         top: 0;
+//         height: 10%;
+//         width: 100%;
+//         background-color: rgb(0, 115, 255);
+//         color: white;
+//         display: flex;
+//         justify-content: space-between;
+//         margin-bottom: 4%;
+        
+       
+        
+//         div{
+//             height: 100%;
+//             padding: 1%;
+//             font-family: sans-serif; 
+            
+//             a{
+//                 color: white;
+//                 text-decoration: none;
+                
+//             }
+//         }
+//         #div1{
+//             font-size: 2rem;  
+//         }
+
+//         #div2{
+//             display: flex;
+            
+
+            
+//         }
+       
+        
+//     }
+// }   
+
+#layout-header{
+    nav{
         display: flex;
         justify-content: space-between;
-        margin-bottom: 4%;
-        
-       
-        
-        div{
-            height: 100%;
-            padding: 1%;
-            font-family: sans-serif; 
-            
-            a{
-                color: white;
-                text-decoration: none;
-                
+        padding: 0 10px;
+        background: #2196f3;
+        color: white;
+        box-shadow: 1px 1px 1px 1px lightgrey;
+
+        .mini-logo{
+            p{
+                margin: 5px;
+                font-size: 1.4rem;
+                font-weight: bold;
             }
         }
-        #div1{
-            font-size: 2rem;  
+
+        .auth-links{
+            ul{
+                margin: 5% 5px;
+                display: flex;
+
+                li{
+                    margin-right: 10px;
+                }
+            }
         }
 
-        #div2{
-            display: flex;
-            
-
-            
+        a{
+            color: white;
+            text-decoration: none;
         }
-       
-        
+
     }
-}   
+}
