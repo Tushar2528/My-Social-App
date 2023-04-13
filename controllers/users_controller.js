@@ -1,11 +1,29 @@
 const User = require('../models/users')
 
 module.exports.profile = function(req, res){
-
-    res.render('user_profile', {
-        title : "User page",
+    User.findById(req.params.id)
+    .then(function(user){
+        res.render('user_profile', {
+            title : "User page",
+            profile_user : user
+        });
     });
-    // res.end("<h1> Profile page </h1>");
+
+
+    
+};
+
+module.exports.update = function(req, res){
+
+    if(req.user.id == req.params.id){
+        User.findByIdAndUpdate(req.params.id, req.body)
+        .then(function(user){
+            return res.redirect('back')
+        })
+    } 
+    else{
+        return res.status(401).send('Unauthorized');
+    }
 };
 
 // Render the sign up page
@@ -61,21 +79,45 @@ module.exports.create = function(req,res){
 };
 
 
-// Sign in and create a session for the user
-
+// sign in and create a session for the user
 module.exports.createSession = function(req, res){
+    req.flash('success', 'Logged in Successfully');
+    return res.redirect('/');
+}
+
+module.exports.destroySession = function(req, res){
+    req.logout(function(err) {
+        if (err) { return next(err); }
+        req.flash('success',"You have logged-out");
+        res.redirect('/');
+      });
+
+
+      
+    // req.logout();
+    // req.flash('success', 'You have logged out!');
+
+
+    // return res.redirect('/');
+};
+
+// // Sign in and create a session for the user
+
+// module.exports.createSession = function(req, res){
+//     req.flash('success', 'Logged in Sccessfully');
     
-    return res.redirect('/');
+//     return res.redirect('/');
 
-}
+// }
 
 
-module.exports.destroySession = function(req,res){
-    req.logout(function(err){
-        if (err){
-            return next(err);
-        }
+// module.exports.destroySession = function(req,res){
+//     req.logout(function(err){
+//         if (err){
+//             return next(err);
+//         }
         
-    });
-    return res.redirect('/');
-}
+//     });
+//     req.flash('success','You have Logged out!');
+//     return res.redirect('/');
+// }

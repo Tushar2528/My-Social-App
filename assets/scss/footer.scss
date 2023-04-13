@@ -29,6 +29,8 @@
 // }
 
 #layout-footer{
+    // position: absolute;
+    // width: 100%;
     color: white;
     a{
         color: white;
@@ -36,6 +38,7 @@
     }
 
     background: grey;
+    // top: 100%;
     padding: 5px 10px;
     display: flex;
     justify-content: flex-start;
